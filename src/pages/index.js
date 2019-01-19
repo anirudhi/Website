@@ -19,6 +19,7 @@ class BlogIndex extends React.Component {
         <Header />
         <div className="Typewriter">Anirudh Iyer</div>
       </Layout>
+      <Footer/>
     )
   }
 }
