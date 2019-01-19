@@ -17,7 +17,7 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Header />
-        <Typewriter typeArr={typeArr} />
+        <div className="Typewriter">Anirudh Iyer</div>
       </Layout>
     )
   }
