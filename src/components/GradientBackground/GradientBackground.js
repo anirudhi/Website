@@ -1,9 +1,11 @@
-import styles from './GradientBackground.css'
+import React from 'react'
+import styles from './GradientBackground.module.scss'
+import { colors } from '../../theme'
 
 const GradientBackground = props => (
   <div className={styles.PrimaryBackground}>
     {props.primaryText}
-    <div css={arrowStyle} />
+    <div style={arrowStyle} />
   </div>
 )
 

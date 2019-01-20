@@ -1,23 +1,23 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { colors, media } from 'theme'
+import { colors, media } from '../theme'
 
-const HeaderLink = ({ isActive, title, to }) => (
-  <Link css={[style, isActive && activeStyle]} to={to}>
+const HeaderLink = ({ title, to }) => (
+  <Link style={style} to={to}>
     {title}
-    {isActive && <span css={activeAfterStyle} />}
   </Link>
 )
 
 const style = {
-  display: 'flex',
-  flexDirection: 'row',
+  fontFamily: 'Roboto',
+  fontWeight: 800,
+  textTransform: 'Uppercase',
   alignItems: 'center',
-  color: colors.white,
+  color: colors.dark,
   transition: 'color 0.2s ease-out',
   paddingLeft: 15,
   paddingRight: 15,
-  fontWeight: 300,
+  fontSize: 12,
 
   ':focus': {
     outline: 0,
@@ -45,25 +45,4 @@ const style = {
     },
   },
 }
-
-const activeStyle = {
-  color: colors.brand,
-
-  [media.greaterThan('small')]: {
-    position: 'relative',
-  },
-}
-
-const activeAfterStyle = {
-  [media.greaterThan('small')]: {
-    position: 'absolute',
-    bottom: -1,
-    height: 4,
-    background: colors.brand,
-    left: 0,
-    right: 0,
-    zIndex: 1,
-  },
-}
-
 export default HeaderLink

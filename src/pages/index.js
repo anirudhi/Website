@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import WebFont from 'webfontloader'
 
 import {
   Bio,
@@ -8,8 +9,7 @@ import {
   Layout,
   SEO,
   GradientBackground,
-  ProjectSlider,
-  BlogSlider,
+  ContentSlider,
   LinkButton,
 } from '../components'
 
@@ -57,16 +57,29 @@ class Index extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         {contact}
-        <Header handleContact={this.openContact} />
+        <Header
+          handleContact={this.openContact}
+          location={this.props.location}
+        />
         <GradientBackground primaryText="Hey, I'm Anirudh" />
-        <BlogSlider posts={data.allMarkdownRemark.edges} />
+        <ContentSlider type="blog" posts={data.allMarkdownRemark.edges} />
         {aboutBox}
-        <ProjectSlider posts={data.allMarkdownRemark.edges} colorInversed />
+        <ContentSlider
+          type="projects"
+          posts={data.allMarkdownRemark.edges}
+          colorInversed
+        />
         <Footer />
       </Layout>
     )
   }
 }
+
+WebFont.load({
+  google: {
+    families: ['Fjalla+One', 'Roboto', 'sans-serif'],
+  },
+})
 
 export default Index
 

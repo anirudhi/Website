@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import { Bio, Layout, SEO } from '../components'
 
-class About extends React.Component {
+class ProjectIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -21,7 +21,7 @@ class About extends React.Component {
   }
 }
 
-export default About
+export default ProjectIndex
 
 export const pageQuery = graphql`
   query {

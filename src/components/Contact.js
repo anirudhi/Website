@@ -3,7 +3,7 @@ import React from 'react'
 import { colors, media } from 'theme'
 
 const Contact = () => {
-  return <div css={style} />
+  return <div css={} />
 }
 
 export default LinkButton

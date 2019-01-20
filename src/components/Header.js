@@ -2,27 +2,29 @@ import HeaderLink from './HeaderLink'
 import LinkButton from './LinkButton'
 import { Link } from 'gatsby'
 import React from 'react'
-import { colors, fonts, media } from 'theme'
+import { colors, fonts, media } from '../theme'
 
 import logoSvg from '../../static/logo.svg'
 
-const Header = ({ location }) => (
+const Header = ({ location, handleContact }) => (
   <header
-    css={{
-      backgroundColor: colors.darker,
-      color: colors.white,
+    style={{
+      backgroundColor: colors.white,
+      color: colors.dark,
       position: 'fixed',
       zIndex: 1,
+      marginLeft: '2.5rem',
+      marginRight: '2.5rem',
       width: '100%',
       top: 0,
       left: 0,
     }}
   >
     <div
-      css={{
-        display: 'flex',
-        flexDirection: 'row',
+      style={{
+        display: 'grid',
         alignItems: 'center',
+        gridTemplateColumns: '7fr 3fr',
         height: 60,
         [media.between('small', 'large')]: {
           height: 50,
@@ -32,62 +34,11 @@ const Header = ({ location }) => (
         },
       }}
     >
-      <Link
-        css={{
-          display: 'flex',
-          marginRight: 10,
-          height: '100%',
-          alignItems: 'center',
-          color: colors.brand,
-
-          ':focus': {
-            outline: 0,
-            color: colors.white,
-          },
-
-          [media.greaterThan('small')]: {
-            width: 'calc(100% / 6)',
-          },
-          [media.lessThan('small')]: {
-            flex: '0 0 auto',
-          },
-        }}
-        to="/"
-      >
-        <img src={logoSvg} alt="" height="20" />
-        <span
-          css={{
-            color: 'inherit',
-            marginLeft: 10,
-            fontWeight: 700,
-            fontSize: 20,
-            lineHeight: '20px',
-            [media.lessThan('large')]: {
-              fontSize: 16,
-              marginTop: 1,
-            },
-            [media.lessThan('small')]: {
-              // Visually hidden
-              position: 'absolute',
-              overflow: 'hidden',
-              clip: 'rect(0 0 0 0)',
-              height: 1,
-              width: 1,
-              margin: -1,
-              padding: 0,
-              border: 0,
-            },
-          }}
-        >
-          React
-        </span>
-      </Link>
-
       <nav
-        css={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'stretch',
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'auto auto auto auto',
+          alignItems: 'center',
           overflowX: 'auto',
           overflowY: 'hidden',
           WebkitOverflowScrolling: 'touch',
@@ -107,6 +58,25 @@ const Header = ({ location }) => (
           },
         }}
       >
+        <Link
+          style={{
+            height: '100%',
+            ':focus': {
+              outline: 0,
+              color: colors.white,
+            },
+
+            [media.greaterThan('small')]: {
+              width: 'calc(100% / 6)',
+            },
+            [media.lessThan('small')]: {
+              flex: '0 0 auto',
+            },
+          }}
+          to="/"
+        >
+          <img src={logoSvg} alt="" height="50" />
+        </Link>
         <HeaderLink
           isActive={location.pathname.includes('/about/')}
           title="About"
@@ -123,7 +93,7 @@ const Header = ({ location }) => (
           to="/blog"
         />
       </nav>
-      <LinkButton color={colors.primary} onClick={this.props.handleContact}>
+      <LinkButton color={colors.primary} onClick={handleContact}>
         <div>Get in touch</div>
       </LinkButton>
     </div>

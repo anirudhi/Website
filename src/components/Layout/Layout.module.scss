@@ -1,0 +1,11 @@
+@import '../../theme.scss';
+
+.Layout {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+
+  @include phone {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

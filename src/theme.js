@@ -80,3 +80,10 @@ const fonts = {
     fontSize: 14,
   },
 }
+
+const fontSizes = {
+  extraSmall: 12,
+  small: 15,
+}
+
+export { colors, fonts, media }

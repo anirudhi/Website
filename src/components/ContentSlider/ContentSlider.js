@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Typing from 'react-typing-animation'
 import { rhythm } from '../../utils/typography'
-import styles from './ContentSlider.css'
+import styles from './ContentSlider.module.css'
 
-class BlogSlider extends React.Component {
+class ContentSlider extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -34,10 +34,12 @@ class BlogSlider extends React.Component {
 
   render() {
     const { posts, colorInversed } = this.props
+    console.log(posts)
+    const { currentSlide } = this.state
 
     const dots = posts.forEach((post, index) => {
       const active = index === this.state.currentSlide ? styles.Active : ''
-      return <div className={styles.Dot`${' ' + active}`} />
+      return <div className={`${styles.Dot}${' ' + active}`} />
     })
 
     const inversed = colorInversed ? styles.Inversed : ''
@@ -60,25 +62,21 @@ class BlogSlider extends React.Component {
             marginBottom: rhythm(1 / 4),
           }}
         >
-          <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
+          <Link style={{ boxShadow: `none` }} to={post.node.fields.slug}>
             <Typing speed={50}>
               <span className={styles.Title}>
-                {post.frontmatter.title || post.fields.slug}
+                {post.node.frontmatter.title || post.node.fields.slug}
               </span>
-              <span className={styles.Excerpt}>{post.excerpt}</span>
+              <span className={styles.Excerpt}>{post.node.excerpt}</span>
             </Typing>
           </Link>
         </h3>
-        <small>{post.frontmatter.date}</small>
+        <small>{post.node.frontmatter.date}</small>
       </div>
     )
 
     return (
-      <div className={styles.Container`${' ' + inversed}`}>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
+      <div className={`${styles.Container}${' ' + inversed}`}>
         <div className={styles.Dots}>{dots}</div>
         {left}
         {right}
@@ -88,4 +86,4 @@ class BlogSlider extends React.Component {
   }
 }
 
-export default BlogSlider
+export default ContentSlider
