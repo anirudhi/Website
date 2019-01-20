@@ -1,14 +1,54 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import { Bio, Header, Layout, SEO, GradientBackground } from '../components'
-import { rhythm } from '../utils/typography'
+import {
+  Bio,
+  Header,
+  Footer,
+  Layout,
+  SEO,
+  GradientBackground,
+  ProjectSlider,
+  BlogSlider,
+  LinkButton,
+} from '../components'
 
-class BlogIndex extends React.Component {
+import { colors } from '../theme'
+
+class Index extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      showContact: false,
+    }
+    this.closeContact = this.closeContact.bind(this)
+  }
+
+  openContact() {
+    this.setState({ showContact: true })
+  }
+
+  closeContact() {
+    this.setState({ showContact: false })
+  }
+
   render() {
     const { data } = this.props
 
-    const typeArr = ['Fullstack Developer', 'Artist', 'Anirudh Iyer']
+    const aboutBox = (
+      <div>
+        <div>Designer</div>
+        <div>Creator</div>
+        <div>Programmer</div>
+        <LinkButton color={colors.secondary} to={'/about'}>
+          <div>About Me</div>
+        </LinkButton>
+      </div>
+    )
+
+    const contact = this.state.showContact ? (
+      <Contact handleContact={this.closeContact} />
+    ) : null
 
     return (
       <Layout location={this.props.location} title={''}>
@@ -16,18 +56,19 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Header />
+        {contact}
+        <Header handleContact={this.openContact} />
         <GradientBackground primaryText="Hey, I'm Anirudh" />
-        <ContentSlider type="blog" />
+        <BlogSlider posts={data.allMarkdownRemark.edges} />
         {aboutBox}
-        <ContentSlider type="projects" colorInversed />
+        <ProjectSlider posts={data.allMarkdownRemark.edges} colorInversed />
         <Footer />
       </Layout>
     )
   }
 }
 
-export default BlogIndex
+export default Index
 
 export const pageQuery = graphql`
   query {

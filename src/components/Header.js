@@ -1,4 +1,5 @@
 import HeaderLink from './HeaderLink'
+import LinkButton from './LinkButton'
 import { Link } from 'gatsby'
 import React from 'react'
 import { colors, fonts, media } from 'theme'
@@ -122,6 +123,9 @@ const Header = ({ location }) => (
           to="/blog"
         />
       </nav>
+      <LinkButton color={colors.primary} onClick={this.props.handleContact}>
+        <div>Get in touch</div>
+      </LinkButton>
     </div>
   </header>
 )
