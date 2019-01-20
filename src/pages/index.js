@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import { Bio, Header, Layout, SEO, Typewriter } from '../components'
+import { Bio, Header, Layout, SEO, GradientBackground } from '../components'
 import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
@@ -17,9 +17,12 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Header />
-        <div className="Typewriter">Anirudh Iyer</div>
+        <GradientBackground primaryText="Hey, I'm Anirudh" />
+        <ContentSlider type="blog" />
+        {aboutBox}
+        <ContentSlider type="projects" colorInversed />
+        <Footer />
       </Layout>
-      <Footer/>
     )
   }
 }

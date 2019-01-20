@@ -3,7 +3,7 @@ module.exports = {
     title: `Anirudh Iyer Personal Website`,
     author: `Anirudh Iyer`,
     description: `A porfolio website for developer extraordinaire Anirudh Iyer.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https:anirudhi.surge.sh`,
     social: {
       github: `Tardishade`,
     },
