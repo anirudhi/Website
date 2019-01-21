@@ -1,4 +1,4 @@
-import LinkButton from '../LinkButton'
+import LinkButton from '../LinkButton/LinkButton'
 import Contact from '../Contact'
 import { Link } from 'gatsby'
 import React from 'react'

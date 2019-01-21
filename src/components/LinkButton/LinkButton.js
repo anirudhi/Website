@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { colors, media } from '../theme'
+import { colors, media } from '../../theme'
 
 const LinkButton = ({ children, onClick }) => {
   return (
