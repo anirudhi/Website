@@ -4,7 +4,7 @@ import { colors } from '../../theme'
 
 const GradientBackground = props => (
   <div className={styles.PrimaryBackground}>
-    {props.primaryText}
+    <div className={styles.PrimaryText}>{props.primaryText}</div>
     <div style={arrowStyle} />
   </div>
 )

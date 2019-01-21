@@ -2,8 +2,12 @@ import { Link } from 'gatsby'
 import React from 'react'
 import { colors, media } from '../theme'
 
-const LinkButton = ({ to, color, children }) => {
-  return <div style={style}>{children}</div>
+const LinkButton = ({ children, onClick }) => {
+  return (
+    <div onClick={onClick} style={style}>
+      {children}
+    </div>
+  )
 }
 
 const style = {

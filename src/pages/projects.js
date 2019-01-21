@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import { Bio, Layout, SEO } from '../components'
+import { Bio, Layout, SEO, Header } from '../components'
 
 class ProjectIndex extends React.Component {
   render() {
@@ -15,6 +15,7 @@ class ProjectIndex extends React.Component {
           title="About"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
+        <Header />
         <Bio />
       </Layout>
     )

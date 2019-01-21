@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Typing from 'react-typing-animation'
 import { rhythm } from '../../utils/typography'
-import styles from './ContentSlider.module.css'
+import styles from './ContentSlider.module.scss'
 
 class ContentSlider extends React.Component {
   constructor(props) {

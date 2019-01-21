@@ -1,9 +1,8 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { colors, media } from 'theme'
 
 const Contact = () => {
-  return <div css={} />
+  return <div>Contact</div>
 }
 
-export default LinkButton
+export default Contact

@@ -16,22 +16,6 @@ import {
 import { colors } from '../theme'
 
 class Index extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showContact: false,
-    }
-    this.closeContact = this.closeContact.bind(this)
-  }
-
-  openContact() {
-    this.setState({ showContact: true })
-  }
-
-  closeContact() {
-    this.setState({ showContact: false })
-  }
-
   render() {
     const { data } = this.props
 
@@ -46,17 +30,12 @@ class Index extends React.Component {
       </div>
     )
 
-    const contact = this.state.showContact ? (
-      <Contact handleContact={this.closeContact} />
-    ) : null
-
     return (
       <Layout location={this.props.location} title={''}>
         <SEO
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        {contact}
         <Header
           handleContact={this.openContact}
           location={this.props.location}
@@ -77,7 +56,7 @@ class Index extends React.Component {
 
 WebFont.load({
   google: {
-    families: ['Fjalla+One', 'Roboto', 'sans-serif'],
+    families: ['Tinos', 'Roboto', 'sans-serif'],
   },
 })
 
