@@ -1,15 +1,14 @@
 .PrimaryBackground {
-  display: grid;
-  grid-template-rows: 3fr 1fr;
   width: 100%;
-  height: 100vh;
+  height: ;
   margin-top: 3.9rem;
-  color: #fff;
-  background-size: 400% 400%;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite;
-  animation: Gradient 15s ease infinite;
+  position: relative;
+}
+
+.PrimaryCanvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 .PrimaryText {
@@ -18,40 +17,45 @@
   margin: auto;
   font-size: 6em;
   font-family: 'Tinos';
+  position: absolute;
+  color: white;
+  left: 15%;
+  top: 20%;
+  line-height: 1.2em;
 }
 
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+// @-webkit-keyframes Gradient {
+//   0% {
+//     background-position: 0% 50%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 0% 50%;
+//   }
+// }
 
-@-moz-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+// @-moz-keyframes Gradient {
+//   0% {
+//     background-position: 0% 50%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 0% 50%;
+//   }
+// }
 
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+// @keyframes Gradient {
+//   0% {
+//     background-position: 0% 50%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 0% 50%;
+//   }
+// }

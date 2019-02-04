@@ -41,13 +41,9 @@ class Index extends React.Component {
           location={this.props.location}
         />
         <GradientBackground primaryText="Hey, I'm Anirudh" />
-        <ContentSlider type="blog" posts={data.allMarkdownRemark.edges} />
+        <Link to={'blog'}>Blog</Link>
         {aboutBox}
-        <ContentSlider
-          type="projects"
-          posts={data.allMarkdownRemark.edges}
-          colorInversed
-        />
+        <Link to={'projects'}>Projects</Link>
         <Footer />
       </Layout>
     )

@@ -5,28 +5,48 @@ import { colors } from '../../theme'
 class GradientBackground extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      x: 0,
-      y: 0,
-    }
-    this.handleMouseOver = this.handleMouseOver.bind(this)
+    this.handleMouseMove = this.handleMouseMove.bind(this)
+    this.paintCanvas = this.paintCanvas.bind(this)
+    this.canvasRef = React.createRef()
   }
 
-  handleMouseOver(e) {
+  paintCanvas(x1, y1, x2, y2) {
+    const canvas = this.canvasRef.current
+    const ctx = canvas.getContext('2d')
+    var grd = ctx.createLinearGradient(x1, y1, x2, y2)
+    grd.addColorStop(0, '#ee7752')
+    grd.addColorStop(0.4, '#e73c7e')
+    grd.addColorStop(0.8, '#23a6d5')
+    grd.addColorStop(1, '#23d5ab')
+
+    // Fill with gradient
+    ctx.fillStyle = grd
+    ctx.fillRect(0, 0, 150, 80)
+  }
+
+  componentDidMount() {
+    this.paintCanvas(0, 0, 200, 0)
+  }
+
+  handleMouseMove(e) {
     const { screenX, screenY } = e
-    this.setState({ x: screenX, y: screenY })
+    const pctx = (360 * screenX) / window.innerWidth
+    const pcty = (360 * screenY) / window.innerWidth
+    this.paintCanvas(pctx, pcty - 100, 200, pcty)
   }
 
   render() {
-    const pct = (360 * this.state.x) / window.innerWidth
     return (
       <div
+        onMouseMove={this.handleMouseMove}
         className={styles.PrimaryBackground}
-        onMouseOver={this.handleMouseOver}
-        style={{
-          background: `${'linear-gradient('}${pct}${'deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)'}`,
-        }}
       >
+        <canvas
+          ref={this.canvasRef}
+          className={styles.PrimaryCanvas}
+          width={'100%'}
+          height={'100%'}
+        />
         <div className={styles.PrimaryText}>{this.props.primaryText}</div>
         <div style={arrowStyle} />
       </div>
