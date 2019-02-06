@@ -21,7 +21,7 @@ class GradientBackground extends React.Component {
 
     // Fill with gradient
     ctx.fillStyle = grd
-    ctx.fillRect(0, 0, 150, 80)
+    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
   }
 
   componentDidMount() {
@@ -30,9 +30,9 @@ class GradientBackground extends React.Component {
 
   handleMouseMove(e) {
     const { screenX, screenY } = e
-    const pctx = (360 * screenX) / window.innerWidth
-    const pcty = (360 * screenY) / window.innerWidth
-    this.paintCanvas(pctx, pcty - 100, 200, pcty)
+    const pctx = screenX / window.innerWidth
+    const pcty = screenY / window.innerWidth
+    this.paintCanvas(screenX, screenY, 0, 200)
   }
 
   render() {
@@ -44,8 +44,8 @@ class GradientBackground extends React.Component {
         <canvas
           ref={this.canvasRef}
           className={styles.PrimaryCanvas}
-          width={'100%'}
-          height={'100%'}
+          width={window.innerWidth}
+          height={window.innerHeight}
         />
         <div className={styles.PrimaryText}>{this.props.primaryText}</div>
         <div style={arrowStyle} />

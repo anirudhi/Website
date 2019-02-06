@@ -41,10 +41,10 @@ class Index extends React.Component {
           location={this.props.location}
         />
         <GradientBackground primaryText="Hey, I'm Anirudh" />
-        <Link to={'blog'}>Blog</Link>
+        {/* <Link to={'blog'}>Blog</Link>
         {aboutBox}
         <Link to={'projects'}>Projects</Link>
-        <Footer />
+        <Footer /> */}
       </Layout>
     )
   }
