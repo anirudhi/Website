@@ -1,0 +1,21 @@
+@import '../../theme.scss';
+
+.PrimaryButton {
+  background-color: #24afb8;
+  transition: all 0.2s ease-out;
+  length: max-content;
+  border-radius: 10px;
+
+  hover: {
+    background-color: #1b848b;
+  }
+
+  focus: {
+    outline: 0;
+    background-color: white;
+    color: white;
+  }
+
+  .Clicked {
+  }
+}

@@ -41,14 +41,9 @@ class GradientBackground extends React.Component {
         onMouseMove={this.handleMouseMove}
         className={styles.PrimaryBackground}
       >
-        <canvas
-          ref={this.canvasRef}
-          className={styles.PrimaryCanvas}
-          width={window.innerWidth}
-          height={window.innerHeight}
-        />
+        <canvas ref={this.canvasRef} className={styles.PrimaryCanvas} />
         <div className={styles.PrimaryText}>{this.props.primaryText}</div>
-        <div style={arrowStyle} />
+        {/*<div style={arrowStyle} /> */}
       </div>
     )
   }

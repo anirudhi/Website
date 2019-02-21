@@ -19,6 +19,8 @@ class Index extends React.Component {
   render() {
     const { data } = this.props
 
+    const contactText = <div className="Contacts" />
+
     const aboutBox = (
       <div>
         <div>Designer</div>
@@ -40,11 +42,10 @@ class Index extends React.Component {
           handleContact={this.openContact}
           location={this.props.location}
         />
-        <GradientBackground primaryText="Hey, I'm Anirudh" />
-        {/* <Link to={'blog'}>Blog</Link>
-        {aboutBox}
-        <Link to={'projects'}>Projects</Link>
-        <Footer /> */}
+        <GradientBackground
+          primaryText="Hey, I'm Anirudh"
+          contactText={contactText}
+        />
       </Layout>
     )
   }

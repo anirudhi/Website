@@ -1,8 +1,13 @@
 @import '../../theme.scss';
 
+html {
+  overflow: hidden;
+}
+
 .Layout {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
+  margin-bottom: 2.5rem;
 
   @include phone {
     margin-left: 0;

@@ -1,5 +1,4 @@
 import LinkButton from '../LinkButton/LinkButton'
-import Contact from '../Contact'
 import { Link } from 'gatsby'
 import React from 'react'
 
@@ -25,10 +24,6 @@ class Header extends React.Component {
   }
 
   render() {
-    const contact = this.state.showContact ? (
-      <Contact handleContact={this.closeContact} />
-    ) : null
-
     return (
       <div className={styles.ContactContainer}>
         <header className={styles.Header}>
@@ -37,20 +32,19 @@ class Header extends React.Component {
               <img src={logoSvg} alt="Anirudh Iyer Personal Website" />
             </Link>
             <Link title="About" to="/about">
-              <span className={styles.HeaderLink}>About</span>
+              About
             </Link>
             <Link title="Projects" to="/projects">
-              <span className={styles.HeaderLink}>Projects</span>
+              Projects
             </Link>
             <Link title="Blog" to="/blog">
-              <span className={styles.HeaderLink}>Blog</span>
+              Blog
             </Link>
           </nav>
-          <LinkButton className={styles.Contact} onClick={this.toggleContact}>
-            <div>Get in touch</div>
-          </LinkButton>
+          <Link to={'/contact'}>
+            <div className={styles.Contact}>Get in touch</div>
+          </Link>
         </header>
-        {contact}
       </div>
     )
   }

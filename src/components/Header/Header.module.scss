@@ -17,7 +17,7 @@ $logo-height: 35px;
   color: $dark;
   display: grid;
   align-items: center;
-  grid-template-columns: 7fr 3fr;
+  grid-template-columns: 8fr 2fr;
   height: $header-height;
 }
 
@@ -30,6 +30,18 @@ $logo-height: 35px;
   overflow-y: hidden;
   height: 100%;
   width: 60%;
+
+  a {
+    box-shadow: none;
+    font-family: 'roboto';
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: rgb(9, 135, 139);
+    transition: all 0.2s ease-out;
+  }
+  a:hover {
+    color: rgb(15, 63, 65);
+  }
 }
 
 .ImgContainer {
@@ -45,10 +57,12 @@ $logo-height: 35px;
   }
 }
 
-.HeaderLink {
-  font-family: 'roboto';
-  text-transform: uppercase;
-}
-
 .Contact {
+  box-shadow: none;
+  font-family: 'roboto';
+  font-size: 0.9em;
+  text-transform: uppercase;
+  background-color: rgb(9, 135, 139);
+  color: white;
+  transition: all 0.2s ease-out;
 }
